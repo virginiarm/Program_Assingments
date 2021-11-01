@@ -1,0 +1,23 @@
+Hello World
+Hello World!
+('Hello World!', 'I like plants')
+('I drank', 8, 'glasses of water today.')
+4
+-90
+I become interested in artificial intellience
+21.07
+False
+<type 'int'>
+<type 'str'>
+<type 'float'>
+<type 'bool'>
+10
+97
+69.99
+In 2018 gross product of the world (GWP) was 84.84 in trillion US dollars.
+<type 'list'>
+<type 'dict'>
+<type 'tuple'>
+(1, 2, 3, 4, 5)
+{'eggs': 3.99, 'bagels': 3.99, 'apples': 1.5}
+('see South Korea', 'see Mexico', 'see Japan')
