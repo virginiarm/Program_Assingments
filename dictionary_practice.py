@@ -1,20 +1,19 @@
-dict_food = {"Chicken" :1.59,"Beef":1.99,"Cheese" :1.00 ,"Milk" : 2.50 }
-print (dict_food)
+groceries = {"Chicken" :1.59,"Beef":1.99,"Cheese" :1.00 ,"Milk" : 2.50 }
+
 
 school_supplies = {"notebooks": 6, "pens" :4, "binders" :2, "calculator" :1}
 
 
-chicken_price = dict_food["Chicken"]
-print (chicken_price)
+chicken_price = groceries["Chicken"]
 
-beef_price = dict_food ["Beef"]
-print (beef_price)
 
-cheese_price = dict_food ["Cheese"]
-print (cheese_price)
+beef_price = groceries ["Beef"]
 
-milk_price = dict_food ["Milk"]
-print (milk_price)
+
+cheese_price = groceries ["Cheese"]
+
+milk_price = groceries ["Milk"]
+
 
 notebooks = school_supplies ["notebooks"]
 pens = school_supplies ["pens"]
@@ -27,7 +26,7 @@ shoe_inv = {
     "Foamposite" : 19,
     "Air Max": 5,
     "SB Dunk " : 20}
-print (shoe_inv)
+
 
 shoe_inv ["SB Dunk "] -=2
 shoe_inv [ "Yeezy"] += 1
@@ -42,35 +41,66 @@ shoe_inv ["Yeezy"] -=3
 shoe_inv ["Air Max"] -=3
 shoe_inv ["Foamposite"] -=3
 shoe_inv [ "Jordan 13"] -=3
-print (shoe_inv)
 
-dict_food ["Eggs"] =1.79
-dict_food ["Bacon"] = 1.89
-dict_food ["Strawberry"] =3.50
-print (dict_food)
+
+groceries ["Eggs"] =1.79
+groceries ["Bacon"] = 1.89
+groceries ["Strawberry"] =3.50
+
 
 school_supplies ["highlighters"] =5
 school_supplies ["pencils"] = 7
 school_supplies ["laptop"] = 1
-print (school_supplies) 
+
 
 shoe_inv ["Jordan "] = 12
 shoe_inv ["Nike"] = 10
 shoe_inv ["Pumas"] = 8
-print (shoe_inv)
 
-del dict_food ["Eggs"] 
-del dict_food ["Bacon"]
-print (dict_food)
+
+del groceries ["Eggs"] 
+del groceries ["Bacon"]
+
 
 del school_supplies ["highlighters"] 
 del school_supplies ["pencils"]
-print (school_supplies)
+
 
 del shoe_inv["Nike"] 
 del shoe_inv ["Pumas"]
-print (shoe_inv)
 
+def total_price(food_item, food_item2):
+    total = groceries[food_item] + groceries[food_item2]
+    return total 
+
+def price_diff(food_item, food_item2):
+    diff=groceries [food_item] - groceries [food_item2]
+    return abs(diff)
+def shoe_restock (shoe, num) :
+    shoe_inv [shoe] *= num
+    return shoe_inv
+
+def clearance_sale (shoe, num) :
+    shoe_inv [shoe] //= num
+    return shoe_inv
+
+def supply_search(dict):
+    largest= 0
+    supply = ''
+
+    for key in dict.keys():
+        if dict[key] > largest:
+            largest = dict [key]
+            supply = key
+   
+    return (supply, largest)
+
+
+print(total_price ("Beef","Cheese"))
+print(price_diff ("Beef","Cheese"))
+print(shoe_restock ("Yeezy",3))
+print(clearance_sale ("SB Dunk ",2))
+print(supply_search (school_supplies))
 
 
 
