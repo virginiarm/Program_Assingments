@@ -1,37 +1,34 @@
-# creating empty list
-checklist=[]
+# -*- coding: utf-8 -*-#
+#  creating empty list
+checklist =[]
 
 #creating CRUD functions for checklist
 
 # CREATE
 def create(item):
-    #Create item code here
+
+    # Create item code here
     checklist.append(item)
 
-    return "Added {} to checklist". format(item)
+    return "Added {} to checklist".format(item)
 
 # READ
 def read(index):
 
-    #Read code here
-   print(checklist[index])
-
-   return checklist[index]
-
-# READ
-def read (index):
-
-    #Read code here
+    # Read code here
     print(checklist[index])
 
     return checklist[index]
 
 # UPDATE 
-def update(index,item):
+def update(index, item):
     
-    old=checklist[index]
+    old = checklist[index]
 
-    return "Changed {} to {}".format(old,item)
+    # Update code here
+    checklist[index] = item
+
+    return "Changed {} to {}".format(old, item)
 
 
 # DESTROY
@@ -39,83 +36,117 @@ def destroy(index):
 
     removed = checklist[index]
      
-    #Destroy code here
+    # Destroy code here
     checklist.pop(index)
 
     return "Removed {} from checklist".format(removed)
 
-#GET AKK ITEMS IN LIST
+# SEE ALL ITEMS
 def all_items():
-    items = []
-    for el in checklist:
-        print(el)
-        items.append(el)
-    
-    return items
 
-#ADD CHECK MARK TO ITEM
+    items = []
+
+    for element in checklist:
+        print(element)
+        items.append(element)
+
+    return items 
+
+# ADD CHECK MARK TO ITEM
 def checked(index):
-    unchecked = checklist[index]
-    checklist[index] = "  " + unchecked
+
+    unchecked = checklist[index] 
+
+    checklist[index] = "√ " + unchecked 
 
     return checklist[index]
 
 # USER INPUT FUNCTION 
 def user_input(prompt):
+     
+    entry = input(prompt)
 
-    entry = input (prompt)
-    
     return entry
 
 #USER CHOICE FUNCTION
 def user_choice():
 
-    choice = user_input("Which function would you like to use? Enter C for create, R for read and D for destroy. ")
+    # initialize variable for while loop
+    editing = True
 
-    if choice == "C" or "c":
+    while editing:
+
+        choice = user_input("Which function would you like to use? Enter C for create, R for read, U for update and D for destroy, A to view all items currently in the checklist and S to select an item with a checkmark. ")
+
+        if choice == "C" or choice == "c":
         
-        item = user_input("What item do you wish to create? Type out the name of your desired item. ")
+            item = user_input("What item do you wish to create? Type out the name of your desired item. ")
 
-        create(item)
+            create(item)
 
-    elif choice == "R" or "r" :
+            continue
 
-        index = user_input ("What item do you wish to read? Give a number for the position of the item." )
+        elif choice == "R" or choice == "r":
 
-        read(index)
+            index = user_input("What item do you wish to read? Give a number for the position of the item. " )
 
-    elif choice == "U" or "u" :
+            read(index)
 
-        update_index = user_input("What item do you wish to update? Give a number for the position of the item." )
+            continue
+
+        elif choice == "U" or choice == "u":
+
+            update_index = user_input("What item do you wish to update? Give a number for the position of the item. " )
         
-        new_item = user_input("Type out the name of your new item.")
+            new_item = user_input("Type out the name of your new item. ")
         
-        update(update_index,new_item)
+            update(update_index, new_item)
 
-    elif choice == "D" or "d" :
+            continue
 
-        delete_index = user_input("What item do you wish to delete? Give a number for the position of the item.")
+        elif choice == "D" or choice == "d":
+
+            delete_index = user_input("What item do you wish to delete? Give a number for the position of the item. ")
         
-        destroy(delete_index)
+            destroy(delete_index)
 
+            continue
+        elif choice == "A" or "a":
+            all_items()
+            continue
+        elif choice == "S" or "s":
+            checked_index = user_input("What item do you wish to check off? Give a number for the position of the item. ")
+            checked(checked_index)
+            continue
+        else:
 
+            end = user_input("Do you wish to quit? Enter Y for yes or N for no." )
+
+            if end == "Y" or end == "y":
+                print(checklist)
+                editing = False
+
+            else:
+
+                continue
 def test():
 
-    create("purple sox")
-    create("red cloak")
+    # create("purple sox")
+    # create("red cloak")
 
-    print(read(0))
-    print(read(1))
+    # print(read(0))
+    # print(read(1))
 
-    update(0, "purple socks")
-    destroy(1)
+    # update(0, "purple socks")
+    # destroy(1)
 
-    print(read(0))
-    print(all_items())
-    print(checked(0))
-
+    # print(read(0))
+    # print(all_items())
+    # print(checked(0))
+    # print(user_input("Is this working?"))
     user_choice()
-test()
+    
+user_choice()
 
 
 
