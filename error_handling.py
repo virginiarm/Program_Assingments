@@ -1,9 +1,19 @@
+"""
+We're writing a program that adds two numbers together. 
+Test this and solve any errors you find if you can. 
+Solving one problem might turn up a new error...
+Be sure to keep a note of whatever errors you find!
+note 1: the first print statement has a spelling within the print() function call
+note 2: there is no closing quotation mark in the first print function call
+note 3: NameError: name 'number_2' is not defined
+note 4: when adding the numbers 1 and 1 the result is:  11
+"""
 
+print("Welcome to the addition helper")
+number1 = input("Please enter the first number:" )
+number2 = input("Please enter the second number: ")
 
-
-
-
-
+print("The result is: ", int(number1) + int(number2))
 
 """
 Below you will find broken pieces of code, do you think you can spot all the errors and fix them? Don't forget to use the debugging skills that you have learned so far!
