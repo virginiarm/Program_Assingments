@@ -20,7 +20,6 @@ Below you will find broken pieces of code, do you think you can spot all the err
 
 If you think this stuff is too easy for you, you can try to see if you can master the VS Code debugger! Just click the link above and get started.
 """
-
 # 1
 greeting = "Hello World!"
 if  greeting in ["Arrr!"] :
