@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-#fall_2021_tf
-=======
 # Program_Assingments
-Tech Foundations assingments 
->>>>>>> afb70b1bfdd8b12eb54acce65f495e77deb731cd
+
+[Final Project Link](https://docs.google.com/presentation/d/1fFDsaNT3XHx5H7VvtOadkt2rfQe3o9OlZMczeylSMpk/edit?usp=sharing)
